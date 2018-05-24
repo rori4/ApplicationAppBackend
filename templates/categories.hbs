@@ -1,0 +1,50 @@
+<div id="content" class="app-content box-shadow-z0" role="main">
+
+    <!-- ############ PAGE START-->
+    {{> header }}
+    <div ui-view class="app-body" id="view">
+        <div class="padding">
+            <div class="row">
+                <div class="col-md-3 push-md-9">
+                    {{> addCategory }}
+                </div>
+                <div class="col-md-9 pull-md-3">
+                    <div id="categoriesOrder" class="row">
+                        {{#each categories}}
+                        <div class="col-xs-6 col-sm-12 col-md-3 col-0">
+                            <div class="box">
+                                <div class="item">
+                                    <div class="item-overlay active p-a">
+                                        <span class="pull-right label warn text-color">
+                                            <i class="fa fa-photo fa-fw"></i>
+                                            {{this.images.length}}
+                                        </span>
+                                        <span class="pull-right label primary text-color m-r">
+                                         <i class="fa fa-photo fa-fw"></i>
+                                        {{this.product.freeImages}} FREE
+                                        </span>
+                                        <a href="" class="pull-left text-u-c label label-md info">{{this.title}}</a>
+                                    </div>
+                                    <a href="#category/{{@key}}"><img src="{{this.images.0.big}}" class="w-full"></a>
+                                </div>
+                                <div class="p-a">
+                                    <!--<div class="text-muted m-b-xs"><span class="m-r">May 12</span>-->
+                                        <!--<a href="" class="m-r"><i class="fa fa-heart-o"></i> 34</a>-->
+                                        <!--<a href=""><i class="fa fa-share"></i></a></div>-->
+                                    <div><a href="" class="_800">{{this.title}}</a></div>
+                                    <p class="text-muted">{{this.product.description}}</p>
+                                    <div>
+                                        <a href="#category/{{@key}}" class="btn btn-xs warn">Edit</a>
+                                        <a href="#delete/{{@key}}" class="btn btn-xs danger">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ############ PAGE END-->
+    </div>
+</div>
